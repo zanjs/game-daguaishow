@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-CN">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=640, minimum-scale=0.5, maximum-scale=0.75, user-scalable=no,target-densityDpi=device-dpi">
+    <title>祖国抗战70周年 消灭小鬼子们 H5 小游戏 | 吹乎网 chuihu.com</title>
+    <link href="./dist/css/app.min.css" rel="stylesheet" type="text/css">
+    <script src="./dist/js/all.min.js"></script>
+</head>
+<body style="opacity:0;">
+<div id='wx_pic' style='margin:0 auto;display:none;'>
+    <img src='./dist/images/pic300.jpg' />
+</div>
+<script>
+    document.body.style.height = view().h + 'px';
+</script>
+<section class="bg-welcome sectionIn">
+    <div class="circle-welcome">&nbsp;</div>
+    <div class="starSmall">&nbsp;</div>
+    <div class="starLine">&nbsp;</div>
+    <div class="welcomeMain">
+        <div class="thanks"><img src="./dist/images/thanks.png"/></div>
+        <div class="widthyou"><img src="./dist/images/widthyou.png"/></div>
+        <div class="rocket"><img src="./dist/images/rocket.png"/></div>
+        <div class="chuihu"><img src="./dist/images/chuihu.png"/></div>
+    </div>
+    <div class="ProgressBar" id="ProgressBar"><span>&nbsp;</span><em>0%</em></div>
+</section>
+<script>
+    var loadingArr = [
+        'dist/images/human5.png',
+        'dist/images/human6.png',
+        'dist/images/chuihu.png',
+        'dist/images/thanks.png',
+        'dist/images/widthyou.png',
+        'dist/images/rocket.png',
+        'dist/images/alert.png',
+        'dist/images/human.png',
+        'dist/images/human2.png',
+        'dist/images/human3.png',
+        'dist/images/human4.png',
+        'dist/images/lighthouse.png',
+        'dist/images/monster1.png',
+        'dist/images/monster2.png',
+        'dist/images/monster3.png',
+        'dist/images/monster4.png',
+        'dist/images/monster11.png',
+        'dist/images/monster12.png',
+        'dist/images/monster13.png',
+        'dist/images/monster14.png',
+        'dist/images/pirate.png',
+        'dist/images/pirate2.png',
+        'dist/images/planet.png',
+        'dist/images/planet2.png',
+        'dist/images/planet3.png',
+        'dist/images/planet4.png',
+        'dist/images/planet5.png',
+        'dist/images/rocket.png',
+        'dist/images/rocket2.png',
+        'dist/images/rocket3.png',
+        'dist/images/smork.png',
+        'dist/images/smork2.png',
+        'dist/images/smork3.png',
+        'dist/images/smork4.png',
+        'dist/images/star.png',
+        'dist/images/star_bg.png',
+        'dist/images/starLine.png',
+        'dist/images/starotund.png',
+        'dist/images/starSmall.png',
+        'dist/images/start.png',
+        'dist/images/stop.png',
+        'dist/images/sun.png',
+        'dist/images/text1.png',
+        'dist/images/text2.png',
+        'dist/images/text3.png',
+        'dist/images/time.png',
+        'dist/images/game-icon_share.png',
+        'dist/images/arrow2.png',
+       
+    ];
+
+    var loadF = false;
+
+    var imgNum = 0;
+    for( var i=0;i<loadingArr.length;i++){
+        var img = document.createElement('img');
+        img.src = loadingArr[i];
+        img.onload = function(){
+            imgNum ++ ;
+            lexChildren( s('ProgressBar') )[0].style.width = Math.floor(((imgNum/loadingArr.length).toFixed(2)*100)) + '%';
+            lexChildren( s('ProgressBar') )[1].innerHTML = Math.floor(((imgNum/loadingArr.length).toFixed(2)*100));
+            if(imgNum == loadingArr.length){
+                remove( s('ProgressBar') );
+                loadF = true;
+            }
+        };
+    };
+</script>
+<section class="sectionHid bg-page2">
+    <div class="circle-page2">&nbsp;</div>
+    <div class="rocket2">&nbsp;</div>
+    <div class="light">&nbsp;</div>
+    <div class="page2">
+        <div class="human">&nbsp;</div>
+        <div class="start1">&nbsp;</div>
+        <div class="start2">&nbsp;</div>
+        <div class="start3">&nbsp;</div>
+        <div class="start4">&nbsp;</div>
+        <div class="pirate">&nbsp;</div>
+    </div>
+    <div class="text"></div>
+</section>
+<section class="sectionHid bg-page3">
+    <div class="text3">&nbsp;</div>
+    <div class="circle-page3">&nbsp;</div>
+    <div class="startAll">&nbsp;</div>
+    <div class="smork1">&nbsp;</div>
+    <div class="smork2">&nbsp;</div>
+    <div class="rocket3">&nbsp;</div>
+
+    <div class="page3">
+        <div class="human1">&nbsp;</div>
+        <div class="human2">&nbsp;</div>
+        <div class="human3">&nbsp;</div>
+        <div class="human4">&nbsp;</div>
+        <div class="human5">&nbsp;</div>
+        <div class="pirate2">&nbsp;</div>
+        <div class="meteor">&nbsp;</div>
+
+    </div>
+</section>
+<section class="sectionHid bg-page4">
+    <div class="circle-page4">&nbsp;</div>
+    <div class="page4">
+        <div class="smork4">&nbsp;</div>
+        <div class="smork5">&nbsp;</div>
+        <div class="rocket4">&nbsp;</div>
+        <button class="btn" id="start">开始打鬼子</button>
+        <div class="text4"></div>
+    </div>
+</section>
+<div class="upArrow" id="upArrow"></div>
+<div class="bgMusic" id="music">
+    <audio loop preload="auto" src="./dist/video/bg.mp3" autoplay="true" style="display:none;"></audio>
+</div>
+<audio loop preload="auto" src="./dist/video/music.mp3" style="display:none;"></audio>
+</body>
+<script>
+    document.body.style.opacity = 1;
+    changePage();    
+    musicShow();   
+</script>
+
+</html>
