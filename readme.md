@@ -1,5 +1,7 @@
 # HTML5 Game For Javascript
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/zanjs/game-daguaishow.svg)](https://greenkeeper.io/)
+
 This is a game, I put his name Fighting monsters.
 
 # Node Npm 
